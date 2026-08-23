@@ -1,0 +1,19 @@
+:root {
+    --bg: #06080d;
+    --bg-soft: #0b0e15;
+    --surface: rgba(255, 255, 255, 0.045);
+    --surface-hover: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.09);
+    --border-light: rgba(255, 255, 255, 0.15);
+
+    --text: #f5f7fb;
+    --text-soft: #9ba4b5;
+    --text-muted: #70798a;
+
+    --accent: #7c5cff;
+    --accent-secondary: #35d4ff;
+    --accent-green: #45efb2;
+
+    --container: 1180px;
+    --radius: 22px;
+}

@@ -1,0 +1,139 @@
+.container {
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    background: rgba(6, 8, 13, 0.78);
+    backdrop-filter: blur(20px);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.logo-mark {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-secondary)
+    );
+
+    box-shadow: 0 0 25px rgba(124, 92, 255, 0.45);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+.main-nav a {
+    transition: 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--text);
+}
+
+.nav-cta {
+    padding: 10px 17px;
+
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    transition: 0.2s ease;
+}
+
+.nav-cta:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.site-footer {
+    padding: 65px 0 30px;
+
+    border-top: 1px solid var(--border);
+
+    background: #05070b;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.footer-content p {
+    margin-top: 8px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+.footer-bottom {
+    padding-top: 24px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
