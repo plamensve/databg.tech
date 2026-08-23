@@ -1,8 +1,11 @@
 title: DataBG
 description: Structured Bulgarian data for AI agents and applications.
-url: "https://databg.tech"
+
+url: "https://plamensve.github.io"
+baseurl: "/databg.tech"
 
 markdown: kramdown
 
 exclude:
   - README.md
+  - .idea
