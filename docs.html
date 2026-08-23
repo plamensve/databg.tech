@@ -1,0 +1,159 @@
+---
+layout: default
+title: Documentation
+description: DataBG API and MCP documentation for developers and AI agents.
+---
+
+<section class="page-hero">
+    <div class="container">
+
+        <span class="eyebrow">DOCUMENTATION</span>
+
+        <h1>
+            Connect applications<br>
+            and AI agents.
+        </h1>
+
+        <p>
+            DataBG is being built with REST API and MCP access for structured
+            Bulgarian datasets.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="section">
+
+    <div class="container docs-layout">
+
+        <aside class="docs-sidebar">
+
+            <a href="#overview">Overview</a>
+            <a href="#api">REST API</a>
+            <a href="#mcp">MCP</a>
+            <a href="#example">Example</a>
+            <a href="#status">Status</a>
+
+        </aside>
+
+
+        <div class="docs-content">
+
+            <section id="overview" class="docs-section">
+
+                <span class="eyebrow">OVERVIEW</span>
+
+                <h2>DataBG machine access</h2>
+
+                <p>
+                    DataBG will provide structured access to Bulgarian datasets
+                    through programmatic interfaces designed for developers,
+                    applications and AI agents.
+                </p>
+
+            </section>
+
+
+            <section id="api" class="docs-section">
+
+                <span class="eyebrow">REST API</span>
+
+                <h2>Predictable HTTP endpoints</h2>
+
+                <p>
+                    Applications will be able to search and retrieve structured data
+                    through standard REST endpoints.
+                </p>
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Example request</span>
+                    </div>
+
+                    <pre><code>GET /v1/doctors/search
+?specialty=Cardiology
+&region=Ruse
+&limit=10</code></pre>
+
+                </div>
+
+            </section>
+
+
+            <section id="mcp" class="docs-section">
+
+                <span class="eyebrow">MCP</span>
+
+                <h2>Native access for AI agents</h2>
+
+                <p>
+                    DataBG will expose MCP tools so compatible AI agents can
+                    discover and query datasets directly.
+                </p>
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Planned MCP tool</span>
+                    </div>
+
+                    <pre><code>search_doctors(
+    specialty="Cardiology",
+    region="Ruse",
+    limit=10
+)</code></pre>
+
+                </div>
+
+            </section>
+
+
+            <section id="example" class="docs-section">
+
+                <span class="eyebrow">RESPONSE</span>
+
+                <h2>Structured JSON</h2>
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        <span>Example response</span>
+                    </div>
+
+                    <pre><code>{
+  "results": [
+    {
+      "uin": "1900000001",
+      "name": "Doctor Name",
+      "specialty": "Cardiology",
+      "workplace": "Medical Center",
+      "region": "Ruse"
+    }
+  ]
+}</code></pre>
+
+                </div>
+
+            </section>
+
+
+            <section id="status" class="docs-section">
+
+                <span class="eyebrow">STATUS</span>
+
+                <h2>API & MCP are coming soon</h2>
+
+                <p>
+                    The current DataBG MVP focuses on building and validating
+                    the underlying datasets. API and MCP access will follow.
+                </p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</section>
