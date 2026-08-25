@@ -6,7 +6,10 @@ description: Explore structured Bulgarian datasets available through DataBG.
 
 <section class="page-hero">
     <div class="container">
-        <span class="eyebrow">DATASETS</span>
+
+        <span class="eyebrow">
+            DATASETS
+        </span>
 
         <h1>
             Bulgarian datasets.<br>
@@ -17,6 +20,7 @@ description: Explore structured Bulgarian datasets available through DataBG.
             DataBG transforms fragmented Bulgarian information into clean,
             structured datasets designed for applications, developers and AI agents.
         </p>
+
     </div>
 </section>
 
@@ -28,96 +32,100 @@ description: Explore structured Bulgarian datasets available through DataBG.
         <div class="dataset-list">
 
             <!-- BULGARIAN DOCTORS -->
-            <article class="dataset-card featured-card">
+            <a
+                href="{{ '/datasets/doctors/' | relative_url }}"
+                class="dataset-card-link"
+            >
 
-                <div class="dataset-top">
+                <article class="dataset-card featured-card">
 
-                    <div class="dataset-icon">
-                        +
-                    </div>
+                    <div class="dataset-top">
 
-                    <span class="dataset-status">
-                        Available
-                    </span>
+                        <div class="dataset-icon">
+                            +
+                        </div>
 
-                </div>
-
-
-                <div class="dataset-content">
-
-                    <span class="dataset-category">
-                        HEALTHCARE
-                    </span>
-
-                    <h2>
-                        Bulgarian Doctors
-                    </h2>
-
-                    <p>
-                        Structured nationwide dataset of Bulgarian medical professionals.
-                    </p>
-
-
-                    <div class="dataset-fields">
-
-                        <span>UIN</span>
-                        <span>Name</span>
-                        <span>Specialty</span>
-                        <span>Workplace</span>
-                        <span>Address</span>
-                        <span>Region</span>
-                        <span>Phone</span>
-
-                    </div>
-
-
-                    <a
-                        href="{{ '/datasets/doctors/' | relative_url }}"
-                        class="dataset-link"
-                    >
-                        View dataset →
-                    </a>
-
-                </div>
-
-
-                <div class="dataset-stats">
-
-                    <div>
-                        <span>
-                            Records
+                        <span class="dataset-status">
+                            Available
                         </span>
 
-                        <strong>
-                            30,906
-                        </strong>
                     </div>
 
 
-                    <div>
-                        <span>
-                            Coverage
+                    <div class="dataset-content">
+
+                        <span class="dataset-category">
+                            HEALTHCARE
                         </span>
 
-                        <strong>
-                            Nationwide
-                        </strong>
-                    </div>
+                        <h2>
+                            Bulgarian Doctors
+                        </h2>
+
+                        <p>
+                            Structured nationwide dataset of Bulgarian medical professionals.
+                        </p>
 
 
-                    <div>
-                        <span>
-                            Status
+                        <div class="dataset-fields">
+
+                            <span>UIN</span>
+                            <span>Name</span>
+                            <span>Specialty</span>
+                            <span>Workplace</span>
+                            <span>Address</span>
+                            <span>Region</span>
+                            <span>Phone</span>
+
+                        </div>
+
+
+                        <span class="dataset-link">
+                            View dataset →
                         </span>
 
-                        <strong>
-                            Active
-                        </strong>
                     </div>
 
-                </div>
 
-            </article>
+                    <div class="dataset-stats">
+
+                        <div>
+                            <span>
+                                Records
+                            </span>
+
+                            <strong>
+                                30,906
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                Coverage
+                            </span>
+
+                            <strong>
+                                Nationwide
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                Status
+                            </span>
+
+                            <strong>
+                                Active
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </a>
 
 
             <!-- MORE DATASETS -->
