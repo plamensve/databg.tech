@@ -1,0 +1,444 @@
+---
+layout: default
+title: Bulgarian Doctors Dataset
+description: Structured nationwide dataset of Bulgarian doctors available through the DataBG API.
+permalink: /datasets/doctors/
+---
+
+<section class="page-hero">
+    <div class="container">
+
+        <span class="eyebrow">
+            HEALTHCARE DATASET
+        </span>
+
+        <h1>
+            Bulgarian Doctors
+        </h1>
+
+        <p>
+            Structured nationwide data about registered medical professionals
+            in Bulgaria, available through the DataBG API.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="dataset-detail-grid">
+
+            <main class="dataset-main">
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Dataset overview
+                    </h2>
+
+                    <p>
+                        Bulgarian Doctors contains 30,906 structured records
+                        of medical professionals across Bulgaria.
+                    </p>
+
+                    <p>
+                        The dataset is designed for machine access through the
+                        DataBG API and can be used by AI agents, applications
+                        and other automated systems.
+                    </p>
+
+                    <div class="dataset-fields">
+
+                        <span>UIN</span>
+                        <span>Name</span>
+                        <span>Specialty</span>
+                        <span>Workplace</span>
+                        <span>Address</span>
+                        <span>Phone</span>
+                        <span>Region</span>
+
+                    </div>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        API endpoint
+                    </h2>
+
+                    <pre><code>GET https://api.databg.tech/v1/doctors</code></pre>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Available filters
+                    </h2>
+
+                    <p>
+                        The doctors endpoint supports the following
+                        optional query parameters:
+                    </p>
+
+                    <pre><code>?name=
+?specialty=
+?uin=
+?region=
+?limit=
+?offset=</code></pre>
+
+                    <div class="dataset-filter-list">
+
+                        <div>
+                            <strong>name</strong>
+                            <span>
+                                Search by doctor name.
+                                Partial matching is supported.
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>specialty</strong>
+                            <span>
+                                Search by medical specialty.
+                                Partial matching is supported.
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>uin</strong>
+                            <span>
+                                Search by exact doctor UIN.
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>region</strong>
+                            <span>
+                                Search by Bulgarian region.
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>limit</strong>
+                            <span>
+                                Maximum number of returned records.
+                                Default: 20. Maximum: 100.
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>offset</strong>
+                            <span>
+                                Number of records to skip for pagination.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Example request
+                    </h2>
+
+                    <pre><code>GET https://api.databg.tech/v1/doctors?region=РУСЕ&amp;specialty=Кардиология&amp;limit=10</code></pre>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Authentication
+                    </h2>
+
+                    <p>
+                        Requests to the doctors endpoint currently require
+                        a DataBG API key.
+                    </p>
+
+                    <pre><code>x-api-key: YOUR_API_KEY</code></pre>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Example response
+                    </h2>
+
+                    <pre><code>{
+  "success": true,
+  "count": 1,
+  "limit": 20,
+  "offset": 0,
+  "data": [
+    {
+      "id": 1,
+      "uin": "1234567890",
+      "name": "Д-р Иван Иванов",
+      "specialty": "Кардиология",
+      "workplace": "МБАЛ Пример",
+      "address": "гр. Русе",
+      "phone": "0888123456",
+      "region": "РУСЕ"
+    }
+  ]
+}</code></pre>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Data fields
+                    </h2>
+
+                    <div class="dataset-schema">
+
+                        <div class="schema-row">
+                            <strong>id</strong>
+                            <span>
+                                Internal DataBG record identifier.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>uin</strong>
+                            <span>
+                                Doctor UIN.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>name</strong>
+                            <span>
+                                Doctor name.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>specialty</strong>
+                            <span>
+                                Medical specialty or specialties.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>workplace</strong>
+                            <span>
+                                Medical workplace or practice.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>address</strong>
+                            <span>
+                                Published professional address.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>phone</strong>
+                            <span>
+                                Published professional phone number
+                                when available.
+                            </span>
+                        </div>
+
+                        <div class="schema-row">
+                            <strong>region</strong>
+                            <span>
+                                Bulgarian regional medical association area.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Coverage
+                    </h2>
+
+                    <p>
+                        Nationwide coverage across Bulgaria based on available
+                        records from the Bulgarian medical registry source.
+                    </p>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Known limitations
+                    </h2>
+
+                    <ul class="dataset-limitations">
+
+                        <li>
+                            Phone numbers are not available for all doctor records.
+                        </li>
+
+                        <li>
+                            Some doctors may have more than one specialty.
+                        </li>
+
+                        <li>
+                            Workplace information may not be available
+                            for every doctor.
+                        </li>
+
+                        <li>
+                            Address availability depends on the source record.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <section class="dataset-section">
+
+                    <h2>
+                        Machine-readable discovery
+                    </h2>
+
+                    <p>
+                        AI agents and automated systems can discover
+                        DataBG datasets and API capabilities through:
+                    </p>
+
+                    <div class="machine-links">
+
+                        <a href="https://api.databg.tech/v1/datasets">
+                            https://api.databg.tech/v1/datasets
+                        </a>
+
+                        <a href="https://api.databg.tech/openapi.json">
+                            https://api.databg.tech/openapi.json
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+
+            <aside class="dataset-sidebar">
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        Records
+                    </span>
+
+                    <strong>
+                        30,906
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        Coverage
+                    </span>
+
+                    <strong>
+                        Bulgaria — Nationwide
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong>
+                        Healthcare
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        Language
+                    </span>
+
+                    <strong>
+                        Bulgarian
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        Format
+                    </span>
+
+                    <strong>
+                        JSON
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        API version
+                    </span>
+
+                    <strong>
+                        v1
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-meta-card">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>

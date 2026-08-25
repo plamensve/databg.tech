@@ -1,0 +1,396 @@
+.page-hero {
+    padding: 140px 0 90px;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+    max-width: 900px;
+
+    font-size: clamp(50px, 7vw, 82px);
+    line-height: 1;
+    letter-spacing: -4px;
+    font-weight: 600;
+}
+
+.page-hero p {
+    max-width: 760px;
+
+    margin-top: 28px;
+
+    color: var(--text-soft);
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* ======================================================
+   Main layout
+====================================================== */
+
+.dataset-detail-grid {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 320px;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.dataset-main {
+    min-width: 0;
+}
+
+.dataset-section {
+    padding: 0 0 56px;
+
+    margin-bottom: 56px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.dataset-section:last-child {
+    margin-bottom: 0;
+
+    border-bottom: 0;
+}
+
+.dataset-section h2 {
+    margin-bottom: 18px;
+
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    font-weight: 600;
+}
+
+.dataset-section p {
+    max-width: 760px;
+
+    margin-bottom: 16px;
+
+    color: var(--text-soft);
+
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+
+/* ======================================================
+   Dataset fields
+====================================================== */
+
+.dataset-fields {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 24px;
+}
+
+.dataset-fields span {
+    padding: 7px 11px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+    letter-spacing: 0.3px;
+
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
+/* ======================================================
+   Code blocks
+====================================================== */
+
+.dataset-main pre {
+    overflow-x: auto;
+
+    margin: 22px 0 0;
+
+    padding: 20px 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.dataset-main pre code {
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+    color: var(--text);
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    white-space: pre;
+}
+
+
+/* ======================================================
+   Filter list
+====================================================== */
+
+.dataset-filter-list {
+    display: grid;
+
+    gap: 0;
+
+    margin-top: 28px;
+
+    border-top: 1px solid var(--border);
+}
+
+.dataset-filter-list > div {
+    display: grid;
+
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    gap: 24px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.dataset-filter-list strong {
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.dataset-filter-list span {
+    color: var(--text-soft);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ======================================================
+   Dataset schema
+====================================================== */
+
+.dataset-schema {
+    margin-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.schema-row {
+    display: grid;
+
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    gap: 24px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.schema-row strong {
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.schema-row span {
+    color: var(--text-soft);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ======================================================
+   Known limitations
+====================================================== */
+
+.dataset-limitations {
+    display: grid;
+
+    gap: 14px;
+
+    margin: 20px 0 0;
+
+    padding-left: 22px;
+}
+
+.dataset-limitations li {
+    padding-left: 6px;
+
+    color: var(--text-soft);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ======================================================
+   Machine-readable links
+====================================================== */
+
+.machine-links {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.machine-links a {
+    display: block;
+
+    overflow-wrap: anywhere;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    color: var(--text);
+
+    background: rgba(255, 255, 255, 0.025);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.machine-links a:hover {
+    background: rgba(255, 255, 255, 0.055);
+}
+
+
+/* ======================================================
+   Sidebar
+====================================================== */
+
+.dataset-sidebar {
+    position: sticky;
+
+    top: 110px;
+
+    display: grid;
+
+    gap: 12px;
+}
+
+.dataset-meta-card {
+    padding: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.dataset-meta-card span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+}
+
+.dataset-meta-card strong {
+    display: block;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+/* ======================================================
+   Responsive
+====================================================== */
+
+@media (max-width: 960px) {
+
+    .dataset-detail-grid {
+        grid-template-columns: 1fr;
+
+        gap: 48px;
+    }
+
+    .dataset-sidebar {
+        position: static;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .page-hero {
+        padding: 110px 0 70px;
+    }
+
+    .page-hero h1 {
+        letter-spacing: -2.5px;
+    }
+
+    .dataset-section {
+        padding-bottom: 42px;
+
+        margin-bottom: 42px;
+    }
+
+    .dataset-filter-list > div,
+    .schema-row {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .dataset-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .dataset-main pre {
+        padding: 16px;
+    }
+
+}
