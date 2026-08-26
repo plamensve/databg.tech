@@ -1,159 +1,112 @@
 ---
 layout: default
 title: Documentation
-description: DataBG API and MCP documentation for developers and AI agents.
+description: DataBG API, machine-readable discovery and x402 documentation for developers and AI agents.
 ---
 
 <section class="page-hero">
     <div class="container">
-
         <span class="eyebrow">DOCUMENTATION</span>
-
-        <h1>
-            Connect applications<br>
-            and AI agents.
-        </h1>
-
+        <h1>Connect applications<br>and AI agents.</h1>
         <p>
-            DataBG is being built with REST API and MCP access for structured
-            Bulgarian datasets.
+            DataBG exposes structured datasets and machine-payable tools through predictable HTTP APIs,
+            machine-readable discovery and x402 payments.
         </p>
-
     </div>
 </section>
 
-
 <section class="section">
-
     <div class="container docs-layout">
-
         <aside class="docs-sidebar">
-
             <a href="#overview">Overview</a>
+            <a href="#discovery">Discovery</a>
             <a href="#api">REST API</a>
-            <a href="#mcp">MCP</a>
+            <a href="#x402">x402</a>
             <a href="#example">Example</a>
-            <a href="#status">Status</a>
-
+            <a href="#status">Live status</a>
         </aside>
 
-
         <div class="docs-content">
-
             <section id="overview" class="docs-section">
-
                 <span class="eyebrow">OVERVIEW</span>
-
                 <h2>DataBG machine access</h2>
-
                 <p>
-                    DataBG will provide structured access to Bulgarian datasets
-                    through programmatic interfaces designed for developers,
-                    applications and AI agents.
+                    DataBG is an agent-oriented data and tools platform. Resources can represent structured
+                    datasets, web intelligence operations, domain utilities and other machine-accessible services.
+                    The platform is designed to work globally rather than being limited to Bulgarian data.
                 </p>
-
             </section>
 
+            <section id="discovery" class="docs-section">
+                <span class="eyebrow">DISCOVERY</span>
+                <h2>Machine-readable catalog</h2>
+                <p>
+                    Agents can discover the platform, datasets, tools, endpoints and payment configuration without
+                    relying on a human-oriented interface.
+                </p>
+                <div class="code-window"><div class="code-header"><span>Discovery</span></div><pre><code>GET https://api.databg.tech/.well-known/databg.json
+
+GET https://api.databg.tech/.well-known/x402
+
+GET https://api.databg.tech/openapi.json</code></pre></div>
+            </section>
 
             <section id="api" class="docs-section">
-
                 <span class="eyebrow">REST API</span>
-
                 <h2>Predictable HTTP endpoints</h2>
-
                 <p>
-                    Applications will be able to search and retrieve structured data
-                    through standard REST endpoints.
+                    DataBG resources use standard HTTP endpoints and return structured JSON. Current resources
+                    include datasets and web/domain intelligence tools.
                 </p>
-
-                <div class="code-window">
-
-                    <div class="code-header">
-                        <span>Example request</span>
-                    </div>
-
-                    <pre><code>GET /v1/doctors/search
-?specialty=Cardiology
-&region=Ruse
-&limit=10</code></pre>
-
-                </div>
-
+                <div class="code-window"><div class="code-header"><span>Example</span></div><pre><code>GET https://api.databg.tech/v1/tools/dns
+    ?domain=example.com
+    &type=A</code></pre></div>
             </section>
 
-
-            <section id="mcp" class="docs-section">
-
-                <span class="eyebrow">MCP</span>
-
-                <h2>Native access for AI agents</h2>
-
+            <section id="x402" class="docs-section">
+                <span class="eyebrow">MACHINE PAYMENTS</span>
+                <h2>x402 payment flow</h2>
                 <p>
-                    DataBG will expose MCP tools so compatible AI agents can
-                    discover and query datasets directly.
+                    Paid resources can return HTTP 402 Payment Required with machine-readable payment
+                    requirements. A compatible client can settle the request in USDC on Base Mainnet and retry.
                 </p>
-
-                <div class="code-window">
-
-                    <div class="code-header">
-                        <span>Planned MCP tool</span>
-                    </div>
-
-                    <pre><code>search_doctors(
-    specialty="Cardiology",
-    region="Ruse",
-    limit=10
-)</code></pre>
-
-                </div>
-
+                <div class="code-window"><div class="code-header"><span>x402</span></div><pre><code>Request
+  ↓
+402 Payment Required
+  ↓
+USDC payment on Base Mainnet
+  ↓
+Request settlement
+  ↓
+Structured JSON response</code></pre></div>
             </section>
-
 
             <section id="example" class="docs-section">
-
                 <span class="eyebrow">RESPONSE</span>
-
                 <h2>Structured JSON</h2>
-
-                <div class="code-window">
-
-                    <div class="code-header">
-                        <span>Example response</span>
-                    </div>
-
-                    <pre><code>{
-  "results": [
+                <div class="code-window"><div class="code-header"><span>DNS example</span></div><pre><code>{
+  "success": true,
+  "domain": "example.com",
+  "type": "A",
+  "records": [
     {
-      "uin": "1900000001",
-      "name": "Doctor Name",
-      "specialty": "Cardiology",
-      "workplace": "Medical Center",
-      "region": "Ruse"
+      "name": "example.com",
+      "type": 1,
+      "data": "104.20.23.154"
     }
   ]
-}</code></pre>
-
-                </div>
-
+}</code></pre></div>
             </section>
-
 
             <section id="status" class="docs-section">
-
-                <span class="eyebrow">STATUS</span>
-
-                <h2>API & MCP are coming soon</h2>
-
+                <span class="eyebrow">LIVE STATUS</span>
+                <h2>Infrastructure is live</h2>
                 <p>
-                    The current DataBG MVP focuses on building and validating
-                    the underlying datasets. API and MCP access will follow.
+                    DataBG currently exposes active datasets and machine-payable tools through the production API.
+                    The catalog will continue expanding with new data sources and agent utilities.
                 </p>
-
+                <a href="https://api.databg.tech/openapi.json" class="text-link" target="_blank" rel="noopener">Open live API specification →</a>
             </section>
-
         </div>
-
     </div>
-
 </section>
