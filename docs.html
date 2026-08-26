@@ -56,9 +56,15 @@ GET https://api.databg.tech/openapi.json</code></pre></div>
                 <h2>Predictable HTTP endpoints</h2>
                 <p>
                     DataBG resources use standard HTTP endpoints and return structured JSON. Current resources
-                    include datasets and web/domain intelligence tools.
+                    include datasets, web intelligence, DNS and TLS utilities, IP geolocation, domain lookup and blockchain intelligence.
                 </p>
-                <div class="code-window"><div class="code-header"><span>Example</span></div><pre><code>GET https://api.databg.tech/v1/tools/dns
+                <div class="code-window"><div class="code-header"><span>Tool examples</span></div><pre><code>GET https://api.databg.tech/v1/tools/ip/geolocation
+    ?ip=8.8.8.8
+
+GET https://api.databg.tech/v1/tools/domain/lookup
+    ?domain=google.com
+
+GET https://api.databg.tech/v1/tools/dns
     ?domain=example.com
     &type=A</code></pre></div>
             </section>
@@ -84,17 +90,17 @@ Structured JSON response</code></pre></div>
             <section id="example" class="docs-section">
                 <span class="eyebrow">RESPONSE</span>
                 <h2>Structured JSON</h2>
-                <div class="code-window"><div class="code-header"><span>DNS example</span></div><pre><code>{
+                <div class="code-window"><div class="code-header"><span>IP geolocation example</span></div><pre><code>{
   "success": true,
-  "domain": "example.com",
-  "type": "A",
-  "records": [
-    {
-      "name": "example.com",
-      "type": 1,
-      "data": "104.20.23.154"
-    }
-  ]
+  "ip": "8.8.8.8",
+  "city": "Mountain View",
+  "region": "California",
+  "country": "US",
+  "country_code": "US",
+  "timezone": "America/Los_Angeles",
+  "organization": "Google LLC",
+  "asn": "AS15169",
+  "hostname": "dns.google"
 }</code></pre></div>
             </section>
 
