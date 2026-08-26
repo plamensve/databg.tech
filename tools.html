@@ -15,7 +15,7 @@ description: Machine-payable DataBG tools for AI agents, developers and automate
 
         <div class="tools-hero-meta">
             <div>
-                <strong>5</strong>
+                <strong>7</strong>
                 <span>Active tools</span>
             </div>
             <div class="meta-divider"></div>
@@ -113,6 +113,30 @@ description: Machine-payable DataBG tools for AI agents, developers and automate
                 <div class="tool-tags"><span>EVM</span><span>Base</span><span>x402</span></div>
             </article>
 
+            <article class="tool-card">
+                <div class="tool-card-top">
+                    <span class="tool-index">06</span>
+                    <span class="tool-price">$0.003</span>
+                </div>
+                <span class="tool-category">NETWORK INTELLIGENCE</span>
+                <h3>IP Geolocation</h3>
+                <p>Resolve geolocation and network information for a public IP address, including location, timezone, organization and hostname.</p>
+                <div class="tool-endpoint">GET /v1/tools/ip/geolocation</div>
+                <div class="tool-tags"><span>IP</span><span>Geo</span><span>x402</span></div>
+            </article>
+
+            <article class="tool-card">
+                <div class="tool-card-top">
+                    <span class="tool-index">07</span>
+                    <span class="tool-price">$0.005</span>
+                </div>
+                <span class="tool-category">DOMAIN INTELLIGENCE</span>
+                <h3>Domain Lookup</h3>
+                <p>Resolve public DNS records and inspect the latest publicly logged TLS certificate information for a domain.</p>
+                <div class="tool-endpoint">GET /v1/tools/domain/lookup</div>
+                <div class="tool-tags"><span>DNS</span><span>TLS</span><span>x402</span></div>
+            </article>
+
             <article class="tool-card tool-card-marketplace">
                 <div class="tool-card-top">
                     <span class="tool-index">+</span>
@@ -149,14 +173,14 @@ description: Machine-payable DataBG tools for AI agents, developers and automate
                 <div class="window-dots"><span></span><span></span><span></span></div>
                 <span>x402 flow</span>
             </div>
-            <pre><code><span class="code-muted">GET</span> /v1/tools/dns?domain=example.com
+            <pre><code><span class="code-muted">GET</span> /v1/tools/ip/geolocation?ip=8.8.8.8
 
 <span class="code-number">402</span> Payment Required
 
 <span class="code-key">scheme</span>: <span class="code-value">exact</span>
 <span class="code-key">network</span>: <span class="code-value">eip155:8453</span>
 <span class="code-key">currency</span>: <span class="code-value">USDC</span>
-<span class="code-key">price</span>: <span class="code-value">$0.005</span>
+<span class="code-key">price</span>: <span class="code-value">$0.003</span>
 
 <span class="code-success">→ payment → structured JSON</span></code></pre>
         </div>
