@@ -1,0 +1,129 @@
+.ai-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.ai-background::before {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
+    content: "";
+}
+
+.ai-background-svg {
+    position: absolute;
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    opacity: 0.9;
+}
+
+.ai-background-svg circle:not(.ai-glow),
+.ai-background-svg ellipse {
+    vector-effect: non-scaling-stroke;
+}
+
+.ai-network {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.ai-network-one {
+    animation: ai-drift-one 18s ease-in-out infinite alternate;
+}
+
+.ai-network-two {
+    animation: ai-drift-two 22s ease-in-out infinite alternate;
+}
+
+.ai-network circle {
+    fill: #8d7cff;
+    filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.8));
+    animation: ai-node-pulse 3.5s ease-in-out infinite;
+}
+
+.ai-network-two circle {
+    fill: #35d4ff;
+    filter: drop-shadow(0 0 8px rgba(53, 212, 255, 0.7));
+}
+
+.ai-orbit {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ai-orbit 34s linear infinite;
+}
+
+.ai-orbit circle {
+    fill: #35d4ff;
+    filter: drop-shadow(0 0 12px rgba(53, 212, 255, 0.8));
+}
+
+.ai-glow {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.ai-glow-one {
+    animation: ai-glow-one 12s ease-in-out infinite alternate;
+}
+
+.ai-glow-two {
+    animation: ai-glow-two 15s ease-in-out infinite alternate;
+}
+
+@keyframes ai-drift-one {
+    from { transform: translate3d(-18px, 8px, 0); }
+    to { transform: translate3d(28px, -22px, 0); }
+}
+
+@keyframes ai-drift-two {
+    from { transform: translate3d(22px, -14px, 0); }
+    to { transform: translate3d(-28px, 20px, 0); }
+}
+
+@keyframes ai-node-pulse {
+    0%, 100% { opacity: 0.42; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.35); }
+}
+
+@keyframes ai-orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ai-glow-one {
+    from { transform: translate(-30px, -20px) scale(0.9); opacity: 0.65; }
+    to { transform: translate(45px, 30px) scale(1.1); opacity: 1; }
+}
+
+@keyframes ai-glow-two {
+    from { transform: translate(25px, 20px) scale(0.92); opacity: 0.6; }
+    to { transform: translate(-35px, -30px) scale(1.08); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ai-network,
+    .ai-orbit,
+    .ai-network circle,
+    .ai-glow {
+        animation: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .ai-background {
+        opacity: 0.65;
+    }
+
+    .ai-background::before {
+        background-size: 52px 52px;
+    }
+}
