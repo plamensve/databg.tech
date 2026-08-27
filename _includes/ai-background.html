@@ -1,14 +1,38 @@
 <div class="ai-background" aria-hidden="true">
   <div class="ai-grid"></div>
-  <div class="ai-orb ai-orb-one"></div><div class="ai-orb ai-orb-two"></div><div class="ai-orb ai-orb-three"></div>
+  <div class="ai-orb ai-orb-one"></div>
+  <div class="ai-orb ai-orb-two"></div>
+  <div class="ai-orb ai-orb-three"></div>
+
   <svg class="ai-network ai-network-one" viewBox="0 0 900 520" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="aiLineGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7c5cff" stop-opacity="0"/>
+        <stop offset=".45" stop-color="#9b8cff" stop-opacity=".38"/>
+        <stop offset="1" stop-color="#35d4ff" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
     <path class="network-line" d="M40 430 C180 330 160 170 315 210 S500 390 625 230 S760 100 880 150"/>
     <path class="network-line network-line-alt" d="M20 180 C150 260 245 80 370 145 S550 330 690 170 S790 40 900 70"/>
-    <circle class="network-node" cx="315" cy="210" r="4"/><circle class="network-node" cx="625" cy="230" r="5"/><circle class="network-node" cx="370" cy="145" r="3"/><circle class="network-node" cx="690" cy="170" r="4"/>
+    <path class="constellation-link" d="M315 210 L370 145 L625 230 L690 170"/>
+    <g class="constellation-star" transform="translate(315 210)"><path d="M0-7 L1.8-1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8-1.8 Z"/></g>
+    <g class="constellation-star" transform="translate(625 230)"><path d="M0-8 L2-2 L8 0 L2 2 L0 8 L-2 2 L-8 0 L-2-2 Z"/></g>
+    <g class="constellation-star small" transform="translate(370 145)"><path d="M0-6 L1.5-1.5 L6 0 L1.5 1.5 L0 6 L-1.5 1.5 L-6 0 L-1.5-1.5 Z"/></g>
+    <g class="constellation-star small" transform="translate(690 170)"><path d="M0-6 L1.5-1.5 L6 0 L1.5 1.5 L0 6 L-1.5 1.5 L-6 0 L-1.5-1.5 Z"/></g>
   </svg>
+
   <svg class="ai-network ai-network-two" viewBox="0 0 700 700">
-    <circle class="orbit orbit-one" cx="350" cy="350" r="230"/><circle class="orbit orbit-two" cx="350" cy="350" r="165"/><ellipse class="orbit orbit-three" cx="350" cy="350" rx="285" ry="115"/>
-    <circle class="orbit-node" cx="120" cy="350" r="4"/><circle class="orbit-node" cx="350" cy="120" r="5"/><circle class="orbit-node" cx="580" cy="350" r="4"/><circle class="orbit-node" cx="350" cy="580" r="3"/>
+    <circle class="orbit orbit-one" cx="350" cy="350" r="230"/>
+    <circle class="orbit orbit-two" cx="350" cy="350" r="165"/>
+    <ellipse class="orbit orbit-three" cx="350" cy="350" rx="285" ry="115"/>
+    <path class="constellation-link cyan-link" d="M120 350 L350 120 L580 350 L350 580 Z"/>
+    <g class="constellation-star cyan-star" transform="translate(120 350)"><path d="M0-7 L2-2 L7 0 L2 2 L0 7 L-2 2 L-7 0 L-2-2 Z"/></g>
+    <g class="constellation-star cyan-star" transform="translate(350 120)"><path d="M0-8 L2-2 L8 0 L2 2 L0 8 L-2 2 L-8 0 L-2-2 Z"/></g>
+    <g class="constellation-star cyan-star" transform="translate(580 350)"><path d="M0-7 L2-2 L7 0 L2 2 L0 7 L-2 2 L-7 0 L-2-2 Z"/></g>
+    <g class="constellation-star cyan-star" transform="translate(350 580)"><path d="M0-6 L1.5-1.5 L6 0 L1.5 1.5 L0 6 L-1.5 1.5 L-6 0 L-1.5-1.5 Z"/></g>
   </svg>
-  <div class="ai-scan ai-scan-one"></div><div class="ai-scan ai-scan-two"></div><div class="ai-noise"></div>
+
+  <div class="ai-scan ai-scan-one"></div>
+  <div class="ai-scan ai-scan-two"></div>
+  <div class="ai-noise"></div>
 </div>
