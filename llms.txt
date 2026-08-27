@@ -1,0 +1,32 @@
+# DataBG
+
+> DataBG provides structured Bulgarian data, APIs and machine-payable tools for AI agents, developers and automated systems.
+
+## Website
+
+- [Home](https://databg.tech/): DataBG overview and agent-native data platform.
+- [Tools](https://databg.tech/tools.html): Catalog of machine-payable API tools.
+- [Datasets](https://databg.tech/datasets.html): Structured data resources.
+- [Doctors dataset](https://databg.tech/doctors.html): Bulgarian doctors dataset and API information.
+- [Documentation](https://databg.tech/docs.html): API and integration documentation.
+- [About](https://databg.tech/about.html): About DataBG.
+
+## API tools
+
+- [Web Page Extraction](https://databg.tech/tools/web-page-extraction/): Fetch a public page and return structured metadata, visible text and links.
+- [Web Page Metadata](https://databg.tech/tools/web-page-metadata/): Extract SEO, Open Graph, Twitter and technical metadata.
+- [DNS Lookup](https://databg.tech/tools/dns-lookup/): Resolve public DNS records for a domain.
+- [SSL Certificate Check](https://databg.tech/tools/ssl-certificate-check/): Inspect publicly logged TLS certificate information.
+- [Wallet Balance](https://databg.tech/tools/wallet-balance/): Check native ETH balance on Base Mainnet.
+- [IP Geolocation](https://databg.tech/tools/ip-geolocation/): Resolve public IP geolocation and network information.
+- [Domain Lookup](https://databg.tech/tools/domain-lookup/): Combine public DNS and TLS certificate intelligence for a domain.
+
+## Machine-readable resources
+
+- [DataBG discovery](https://api.databg.tech/.well-known/databg.json): Machine-readable tool and capability catalog.
+- [OpenAPI](https://api.databg.tech/openapi.json): API specification.
+- [x402 discovery](https://api.databg.tech/.well-known/x402): Machine-payment information.
+
+## Payments
+
+DataBG tools support x402 machine payments in USDC on Base Mainnet.
