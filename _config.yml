@@ -1,8 +1,11 @@
 title: DataBG
-description: Structured Bulgarian data for AI agents and applications.
+description: Structured Bulgarian data, APIs and machine-payable tools for AI agents, developers and automated systems.
 
 url: "https://databg.tech"
 baseurl: ""
+lang: en
+author: DataBG
+timezone: Europe/Sofia
 
 markdown: kramdown
 
