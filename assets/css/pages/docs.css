@@ -1,17 +1,13 @@
 .docs-layout {
     display: grid;
-
     grid-template-columns: 220px 1fr;
-
     gap: 70px;
 }
 
 .docs-sidebar {
     position: sticky;
     top: 110px;
-
     height: fit-content;
-
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -19,7 +15,6 @@
 
 .docs-sidebar a {
     color: var(--text-muted);
-
     font-size: 13px;
 }
 
@@ -37,13 +32,70 @@
 
 .docs-section h2 {
     font-size: 38px;
-
     letter-spacing: -1.5px;
 }
 
 .docs-section > p {
     margin-top: 18px;
     margin-bottom: 28px;
-
     color: var(--text-soft);
+}
+
+/* Expanded tool documentation lives inside the tool-page shell. */
+.tool-documentation-section .container {
+    width: 100%;
+    max-width: none;
+}
+
+.tool-documentation-section .section-heading {
+    margin-bottom: 55px;
+}
+
+.tool-documentation-section .docs-section {
+    max-width: 920px;
+    margin-left: 0;
+}
+
+.tool-documentation-section .docs-section h2 {
+    margin-bottom: 18px;
+}
+
+.tool-documentation-section .docs-section h3 {
+    margin-top: 34px;
+    margin-bottom: 10px;
+    font-size: 21px;
+    letter-spacing: -0.5px;
+}
+
+.tool-documentation-section .docs-section p,
+.tool-documentation-section .docs-section li {
+    color: var(--text-soft);
+    line-height: 1.75;
+}
+
+.tool-documentation-section .docs-section ul {
+    padding-left: 20px;
+    margin: 12px 0 24px;
+}
+
+.tool-documentation-section .code-window {
+    margin: 22px 0 28px;
+}
+
+@media (max-width: 900px) {
+    .docs-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .docs-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .docs-content,
+    .tool-documentation-section .docs-section {
+        max-width: none;
+    }
 }
