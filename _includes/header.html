@@ -6,15 +6,32 @@
         </a>
 
         <nav class="main-nav" aria-label="Main navigation">
-            <a href="{{ '/' | relative_url }}"><span class="nav-icon">⌂</span><span>Home</span></a>
-            <a href="{{ '/tools.html' | relative_url }}"><span class="nav-icon">›_</span><span>Tools</span></a>
-            <a href="{{ '/datasets.html' | relative_url }}"><span class="nav-icon">▱</span><span>Datasets</span></a>
-            <a href="{{ '/docs.html' | relative_url }}"><span class="nav-icon">▤</span><span>Docs</span></a>
-            <a href="{{ '/about.html' | relative_url }}"><span class="nav-icon">ⓘ</span><span>About</span></a>
+            <a href="{{ '/' | relative_url }}" class="nav-link{% if page.url == '/' %} is-active{% endif %}">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1z"/><path d="M9 21v-6h6v6"/></svg>
+                <span>Home</span>
+            </a>
+            <a href="{{ '/tools.html' | relative_url }}" class="nav-link{% if page.url contains '/tools' %} is-active{% endif %}">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
+                <span>Tools</span>
+            </a>
+            <a href="{{ '/datasets.html' | relative_url }}" class="nav-link{% if page.url == '/datasets.html' %} is-active{% endif %}">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg>
+                <span>Datasets</span>
+            </a>
+            <a href="{{ '/docs.html' | relative_url }}" class="nav-link{% if page.url == '/docs.html' %} is-active{% endif %}">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 4.5v17M8.5 6H16M8.5 10H17"/></svg>
+                <span>Docs</span>
+            </a>
+            <a href="{{ '/about.html' | relative_url }}" class="nav-link{% if page.url == '/about.html' %} is-active{% endif %}">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg>
+                <span>About</span>
+            </a>
         </nav>
 
         <a href="https://api.databg.tech/v1/datasets" class="nav-cta" target="_blank" rel="noopener">
-            <span class="nav-cta-icon">&lt;/&gt;</span> API Docs
+            <svg class="nav-cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
+            <span>API Docs</span>
+            <span class="nav-cta-arrow">↗</span>
         </a>
     </div>
 </header>
