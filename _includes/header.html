@@ -1,25 +1,20 @@
 <header class="site-header">
     <div class="container nav-container">
-
-        <a href="{{ '/' | relative_url }}" class="logo">
+        <a href="{{ '/' | relative_url }}" class="logo" aria-label="DataBG home">
             <span class="logo-mark"></span>
-            <span>DataBG</span>
+            <span>Data<span class="logo-accent">BG</span></span>
         </a>
 
-        <nav class="main-nav">
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/datasets.html' | relative_url }}">Datasets</a>
-            <a href="{{ '/tools.html' | relative_url }}">Tools</a>
-            <a href="{{ '/docs.html' | relative_url }}">API Docs</a>
-            <a href="{{ '/about.html' | relative_url }}">About</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="{{ '/' | relative_url }}"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="{{ '/tools.html' | relative_url }}"><span class="nav-icon">›_</span><span>Tools</span></a>
+            <a href="{{ '/datasets.html' | relative_url }}"><span class="nav-icon">▱</span><span>Datasets</span></a>
+            <a href="{{ '/docs.html' | relative_url }}"><span class="nav-icon">▤</span><span>Docs</span></a>
+            <a href="{{ '/about.html' | relative_url }}"><span class="nav-icon">ⓘ</span><span>About</span></a>
         </nav>
 
-        <a href="https://api.databg.tech/v1/datasets"
-           class="nav-cta"
-           target="_blank"
-           rel="noopener">
-            Explore API
+        <a href="https://api.databg.tech/v1/datasets" class="nav-cta" target="_blank" rel="noopener">
+            <span class="nav-cta-icon">&lt;/&gt;</span> API Docs
         </a>
-
     </div>
 </header>
