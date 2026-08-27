@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://databg.tech/sitemap.xml
+
+# Machine-readable discovery
+# https://databg.tech/.well-known/databg.json
+# https://api.databg.tech/openapi.json
