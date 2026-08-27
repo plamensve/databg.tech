@@ -52,8 +52,9 @@
     });
   }
 
-  // Gentle Home-only parallax: foreground content, glows and constellation layers move at different rates.
-  if (!reduceMotion && document.body.classList.contains("home-page")) {
+  // Gentle Home-only parallax. Multiple layers move at different rates to create depth.
+  const isHome = window.location.pathname === "/" || window.location.pathname.endsWith("/index.html");
+  if (!reduceMotion && isHome) {
     const layers = [
       ...document.querySelectorAll(".hero-glow"),
       ...document.querySelectorAll(".ai-network-one"),
