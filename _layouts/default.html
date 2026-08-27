@@ -57,7 +57,7 @@
                     <div class="tool-sidebar-footer"><span class="tool-sidebar-status-dot"></span><span>Machine-payable via <strong>x402</strong></span></div>
                 </div>
             </aside>
-            <div class="tool-page-content"><main>{{ content }}</main></div>
+            <div class="tool-page-content"><main>{{ content }}</main>{% include tool-documentation.html %}</div>
         </div>
     </div>
     {% else %}<main>{{ content }}</main>{% endif %}
