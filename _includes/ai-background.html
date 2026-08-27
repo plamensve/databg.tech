@@ -1,46 +1,14 @@
 <div class="ai-background" aria-hidden="true">
-    <svg class="ai-background-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
-        <defs>
-            <linearGradient id="aiLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c5cff" stop-opacity="0" />
-                <stop offset="45%" stop-color="#7c5cff" stop-opacity="0.42" />
-                <stop offset="100%" stop-color="#35d4ff" stop-opacity="0" />
-            </linearGradient>
-            <radialGradient id="aiGlowPurple">
-                <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.16" />
-                <stop offset="100%" stop-color="#7c5cff" stop-opacity="0" />
-            </radialGradient>
-            <radialGradient id="aiGlowCyan">
-                <stop offset="0%" stop-color="#35d4ff" stop-opacity="0.11" />
-                <stop offset="100%" stop-color="#35d4ff" stop-opacity="0" />
-            </radialGradient>
-        </defs>
-
-        <circle class="ai-glow ai-glow-one" cx="190" cy="150" r="270" fill="url(#aiGlowPurple)" />
-        <circle class="ai-glow ai-glow-two" cx="1390" cy="650" r="330" fill="url(#aiGlowCyan)" />
-
-        <g class="ai-network ai-network-one">
-            <path d="M-80 310 L180 170 L410 245 L620 95 L850 185" fill="none" stroke="url(#aiLineGradient)" stroke-width="1.2" />
-            <path d="M180 170 L245 390 L470 330 L620 95" fill="none" stroke="url(#aiLineGradient)" stroke-width="0.8" />
-            <circle cx="180" cy="170" r="4" />
-            <circle cx="410" cy="245" r="3" />
-            <circle cx="620" cy="95" r="4" />
-            <circle cx="470" cy="330" r="2.5" />
-        </g>
-
-        <g class="ai-network ai-network-two">
-            <path d="M820 760 L1030 610 L1250 690 L1450 500 L1680 575" fill="none" stroke="url(#aiLineGradient)" stroke-width="1.2" />
-            <path d="M1030 610 L1100 835 L1335 790 L1450 500" fill="none" stroke="url(#aiLineGradient)" stroke-width="0.8" />
-            <circle cx="1030" cy="610" r="4" />
-            <circle cx="1250" cy="690" r="3" />
-            <circle cx="1450" cy="500" r="4" />
-            <circle cx="1335" cy="790" r="2.5" />
-        </g>
-
-        <g class="ai-orbit">
-            <ellipse cx="800" cy="450" rx="510" ry="210" fill="none" stroke="#7c5cff" stroke-opacity="0.07" stroke-width="1" />
-            <ellipse cx="800" cy="450" rx="390" ry="160" fill="none" stroke="#35d4ff" stroke-opacity="0.055" stroke-width="1" />
-            <circle cx="1310" cy="450" r="3" />
-        </g>
-    </svg>
+  <div class="ai-grid"></div>
+  <div class="ai-orb ai-orb-one"></div><div class="ai-orb ai-orb-two"></div><div class="ai-orb ai-orb-three"></div>
+  <svg class="ai-network ai-network-one" viewBox="0 0 900 520" preserveAspectRatio="none">
+    <path class="network-line" d="M40 430 C180 330 160 170 315 210 S500 390 625 230 S760 100 880 150"/>
+    <path class="network-line network-line-alt" d="M20 180 C150 260 245 80 370 145 S550 330 690 170 S790 40 900 70"/>
+    <circle class="network-node" cx="315" cy="210" r="4"/><circle class="network-node" cx="625" cy="230" r="5"/><circle class="network-node" cx="370" cy="145" r="3"/><circle class="network-node" cx="690" cy="170" r="4"/>
+  </svg>
+  <svg class="ai-network ai-network-two" viewBox="0 0 700 700">
+    <circle class="orbit orbit-one" cx="350" cy="350" r="230"/><circle class="orbit orbit-two" cx="350" cy="350" r="165"/><ellipse class="orbit orbit-three" cx="350" cy="350" rx="285" ry="115"/>
+    <circle class="orbit-node" cx="120" cy="350" r="4"/><circle class="orbit-node" cx="350" cy="120" r="5"/><circle class="orbit-node" cx="580" cy="350" r="4"/><circle class="orbit-node" cx="350" cy="580" r="3"/>
+  </svg>
+  <div class="ai-scan ai-scan-one"></div><div class="ai-scan ai-scan-two"></div><div class="ai-noise"></div>
 </div>
