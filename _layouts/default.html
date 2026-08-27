@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="DataBG">
 
     {% assign seo_title = page.title | default: site.title %}
     {% assign seo_description = page.description | default: site.description %}
@@ -28,7 +29,7 @@
     <meta name="twitter:title" content="{{ seo_title | escape }}">
     <meta name="twitter:description" content="{{ seo_description | escape }}">
 
-    <!-- JSON-LD: Organization + WebSite -->
+    <!-- JSON-LD: Organization + WebSite + WebPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,6 +48,15 @@
           "name": "DataBG",
           "description": "{{ site.description | escape }}",
           "publisher": {"@id": "https://databg.tech/#organization"}
+        },
+        {
+          "@type": "WebPage",
+          "@id": "{{ canonical_url }}#webpage",
+          "url": "{{ canonical_url }}",
+          "name": "{{ seo_title | escape }}",
+          "description": "{{ seo_description | escape }}",
+          "isPartOf": {"@id": "https://databg.tech/#website"},
+          "about": {"@id": "https://databg.tech/#organization"}
         }
       ]
     }
