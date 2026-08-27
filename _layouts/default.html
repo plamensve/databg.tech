@@ -70,23 +70,12 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-009RDEZLDV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-009RDEZLDV');
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-009RDEZLDV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
       gtag('config', 'G-009RDEZLDV');
     </script>
 </head>
@@ -95,9 +84,78 @@
 
     {% include header.html %}
 
+    {% if page.url contains '/tools/' and page.url != '/tools/' %}
+    <div class="tool-page-shell">
+        <div class="container tool-page-container">
+            <aside class="tool-sidebar" aria-label="DataBG tools navigation">
+                <div class="tool-sidebar-inner">
+                    <div class="tool-sidebar-header">
+                        <span class="tool-sidebar-eyebrow">DATAbG TOOLS</span>
+                        <a href="{{ '/tools.html' | relative_url }}" class="tool-sidebar-all">View all <span>→</span></a>
+                    </div>
+
+                    <nav class="tool-sidebar-nav">
+                        <span class="tool-sidebar-group">NETWORK &amp; DOMAIN</span>
+
+                        <a href="{{ '/tools/ip-geolocation/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/ip-geolocation/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">IP</span>
+                            <span class="tool-sidebar-copy"><strong>IP Geolocation</strong><small>Location &amp; ASN data</small></span>
+                        </a>
+
+                        <a href="{{ '/tools/domain-lookup/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/domain-lookup/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">DM</span>
+                            <span class="tool-sidebar-copy"><strong>Domain Lookup</strong><small>DNS &amp; domain intelligence</small></span>
+                        </a>
+
+                        <a href="{{ '/tools/dns-lookup/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/dns-lookup/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">DNS</span>
+                            <span class="tool-sidebar-copy"><strong>DNS Lookup</strong><small>Public DNS records</small></span>
+                        </a>
+
+                        <a href="{{ '/tools/ssl-certificate-check/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/ssl-certificate-check/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">SSL</span>
+                            <span class="tool-sidebar-copy"><strong>SSL Certificate</strong><small>TLS certificate data</small></span>
+                        </a>
+
+                        <span class="tool-sidebar-group">WEB INTELLIGENCE</span>
+
+                        <a href="{{ '/tools/web-page-extraction/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/web-page-extraction/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">EX</span>
+                            <span class="tool-sidebar-copy"><strong>Web Extraction</strong><small>Structured page content</small></span>
+                        </a>
+
+                        <a href="{{ '/tools/web-page-metadata/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/web-page-metadata/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">MT</span>
+                            <span class="tool-sidebar-copy"><strong>Web Metadata</strong><small>SEO &amp; Open Graph data</small></span>
+                        </a>
+
+                        <span class="tool-sidebar-group">BLOCKCHAIN</span>
+
+                        <a href="{{ '/tools/wallet-balance/' | relative_url }}" class="tool-sidebar-link{% if page.url == '/tools/wallet-balance/' %} is-active{% endif %}">
+                            <span class="tool-sidebar-icon">WB</span>
+                            <span class="tool-sidebar-copy"><strong>Wallet Balance</strong><small>Base Mainnet ETH balance</small></span>
+                        </a>
+                    </nav>
+
+                    <div class="tool-sidebar-footer">
+                        <span class="tool-sidebar-status-dot"></span>
+                        <span>Machine-payable via <strong>x402</strong></span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="tool-page-content">
+                <main>
+                    {{ content }}
+                </main>
+            </div>
+        </div>
+    </div>
+    {% else %}
     <main>
         {{ content }}
     </main>
+    {% endif %}
 
     {% include footer.html %}
 
