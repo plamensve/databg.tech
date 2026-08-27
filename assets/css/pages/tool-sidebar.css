@@ -4,7 +4,7 @@
 
 .tool-page-container {
     display: grid;
-    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-columns: 270px minmax(0, 1fr);
     align-items: start;
     gap: 34px;
 }
@@ -14,15 +14,16 @@
     top: 100px;
     z-index: 20;
     padding: 34px 0 50px;
+    margin-left: -42px;
 }
 
 .tool-sidebar-inner {
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 18px;
-    background: rgba(10, 13, 21, 0.78);
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(13, 16, 27, 0.88), rgba(7, 10, 16, 0.78));
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255,255,255,0.04);
+    backdrop-filter: blur(22px);
 }
 
 .tool-sidebar-header {
@@ -30,23 +31,23 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 18px 16px 15px;
+    padding: 20px 18px 16px;
     border-bottom: 1px solid var(--border);
 }
 
 .tool-sidebar-eyebrow {
     color: var(--text-muted);
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.6px;
 }
 
 .tool-sidebar-all {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     color: var(--text-soft);
-    font-size: 10px;
+    font-size: 11px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -56,42 +57,44 @@
 }
 
 .tool-sidebar-nav {
-    padding: 9px;
+    padding: 10px;
 }
 
 .tool-sidebar-group {
     display: block;
-    margin: 13px 8px 7px;
+    margin: 16px 9px 8px;
     color: var(--text-muted);
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 1.35px;
+    letter-spacing: 1.45px;
 }
 
 .tool-sidebar-link {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
-    min-height: 58px;
-    padding: 9px;
+    gap: 11px;
+    min-height: 61px;
+    padding: 10px;
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: 13px;
     color: var(--text-soft);
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tool-sidebar-link:hover {
     transform: translateX(3px);
     border-color: var(--border-light);
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(255, 255, 255, 0.055);
     color: var(--text);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .tool-sidebar-link.is-active {
-    border-color: rgba(126, 111, 255, 0.35);
-    background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(58, 196, 255, 0.055));
+    border-color: rgba(126, 111, 255, 0.38);
+    background: linear-gradient(135deg, rgba(124, 92, 255, 0.17), rgba(58, 196, 255, 0.065));
     color: var(--text);
+    box-shadow: inset 0 0 25px rgba(124, 92, 255, 0.045);
 }
 
 .tool-sidebar-link.is-active::before {
@@ -99,31 +102,34 @@
     left: -1px;
     top: 12px;
     bottom: 12px;
-    width: 2px;
+    width: 3px;
     border-radius: 999px;
     background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
+    box-shadow: 0 0 12px rgba(124, 92, 255, 0.45);
     content: "";
 }
 
 .tool-sidebar-icon {
     display: grid;
     place-items: center;
-    flex: 0 0 32px;
-    width: 32px;
-    height: 32px;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
     border: 1px solid var(--border-light);
-    border-radius: 9px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.035);
     color: var(--text-muted);
     font-family: monospace;
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: -0.2px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .tool-sidebar-link:hover .tool-sidebar-icon,
 .tool-sidebar-link.is-active .tool-sidebar-icon {
-    border-color: rgba(126, 111, 255, 0.38);
+    border-color: rgba(126, 111, 255, 0.42);
+    background: rgba(124, 92, 255, 0.08);
     color: var(--text);
 }
 
@@ -137,8 +143,9 @@
 .tool-sidebar-copy strong {
     overflow: hidden;
     color: inherit;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: -0.15px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -146,8 +153,8 @@
 .tool-sidebar-copy small {
     overflow: hidden;
     color: var(--text-muted);
-    font-size: 8px;
-    line-height: 1.35;
+    font-size: 9px;
+    line-height: 1.4;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -155,12 +162,12 @@
 .tool-sidebar-footer {
     display: flex;
     align-items: center;
-    gap: 7px;
-    margin: 4px 9px 9px;
-    padding: 11px 10px;
+    gap: 8px;
+    margin: 4px 10px 10px;
+    padding: 12px 10px;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
-    font-size: 8px;
+    font-size: 9px;
 }
 
 .tool-sidebar-footer strong {
@@ -185,10 +192,14 @@
     width: 100%;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
+    .tool-sidebar {
+        margin-left: 0;
+    }
+
     .tool-page-container {
-        grid-template-columns: 210px minmax(0, 1fr);
-        gap: 24px;
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 26px;
     }
 }
 
@@ -201,6 +212,7 @@
         position: relative;
         top: auto;
         padding: 20px 0 0;
+        margin-left: 0;
     }
 
     .tool-sidebar-nav {
