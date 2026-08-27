@@ -1,117 +1,111 @@
 ---
 layout: default
-title: Documentation
-description: DataBG API, machine-readable discovery and x402 documentation for developers and AI agents.
+title: DataBG API Documentation
+
+description: Detailed DataBG API documentation for AI agents and developers. Explore web extraction, web metadata, DNS, SSL certificate, domain lookup, IP geolocation and Base wallet balance APIs with x402 machine payments.
 ---
 
 <section class="page-hero">
     <div class="container">
-        <span class="eyebrow">DOCUMENTATION</span>
-        <h1>Connect applications<br>and AI agents.</h1>
-        <p>
-            DataBG exposes structured datasets and machine-payable tools through predictable HTTP APIs,
-            machine-readable discovery and x402 payments.
-        </p>
+        <span class="eyebrow">API DOCUMENTATION</span>
+        <h1>Build with DataBG.<br><span class="gradient-text">Designed for agents.</span></h1>
+        <p>Use predictable HTTP APIs, structured JSON, machine-readable discovery and x402 payments to connect AI agents and applications with web, domain, network and blockchain intelligence.</p>
     </div>
 </section>
 
 <section class="section">
     <div class="container docs-layout">
-        <aside class="docs-sidebar">
+        <aside class="docs-sidebar" aria-label="Documentation navigation">
             <a href="#overview">Overview</a>
+            <a href="#tools">Tool reference</a>
+            <a href="#authentication">Authentication</a>
             <a href="#discovery">Discovery</a>
-            <a href="#api">REST API</a>
-            <a href="#x402">x402</a>
-            <a href="#example">Example</a>
-            <a href="#status">Live status</a>
+            <a href="#x402">x402 payments</a>
+            <a href="#errors">Errors</a>
+            <a href="#workflow">Agent workflow</a>
         </aside>
 
         <div class="docs-content">
             <section id="overview" class="docs-section">
                 <span class="eyebrow">OVERVIEW</span>
-                <h2>DataBG machine access</h2>
-                <p>
-                    DataBG is an agent-oriented data and tools platform. Resources can represent structured
-                    datasets, web intelligence operations, domain utilities and other machine-accessible services.
-                    The platform is designed to work globally rather than being limited to Bulgarian data.
-                </p>
+                <h2>Data infrastructure for AI agents</h2>
+                <p>DataBG provides structured datasets and machine-payable utility APIs. The tools are intentionally small and composable: an agent can use a single endpoint for a specific operation, combine several tools in sequence, and receive JSON that can be passed directly into its next reasoning step.</p>
+                <p>The current tool catalog covers web extraction, website metadata, DNS records, TLS certificate intelligence, combined domain intelligence, IP geolocation and Base Mainnet wallet balances.</p>
+            </section>
+
+            <section id="tools" class="docs-section">
+                <span class="eyebrow">TOOL REFERENCE</span>
+                <h2>All DataBG API tools</h2>
+                <div class="tools-grid">
+                    <article class="tool-card"><span class="tool-category">WEB INTELLIGENCE</span><h3><a href="/tools/web-page-extraction/">Web Page Extraction</a></h3><p>Fetch a public HTTP or HTTPS page and return structured metadata, visible text and links.</p><div class="tool-endpoint">GET /v1/web/extract · $0.005</div></article>
+                    <article class="tool-card"><span class="tool-category">WEB INTELLIGENCE</span><h3><a href="/tools/web-page-metadata/">Web Page Metadata</a></h3><p>Extract SEO, Open Graph, Twitter and technical metadata from a public web page.</p><div class="tool-endpoint">GET /v1/web/metadata · $0.003</div></article>
+                    <article class="tool-card"><span class="tool-category">DOMAIN INTELLIGENCE</span><h3><a href="/tools/dns-lookup/">DNS Lookup</a></h3><p>Resolve public A, AAAA, MX, CNAME, NS, TXT and SOA records.</p><div class="tool-endpoint">GET /v1/tools/dns · $0.005</div></article>
+                    <article class="tool-card"><span class="tool-category">DOMAIN INTELLIGENCE</span><h3><a href="/tools/ssl-certificate-check/">SSL Certificate Check</a></h3><p>Inspect publicly logged TLS certificate information, including certificate and validity signals.</p><div class="tool-endpoint">GET /v1/tools/ssl · $0.005</div></article>
+                    <article class="tool-card"><span class="tool-category">DOMAIN INTELLIGENCE</span><h3><a href="/tools/domain-lookup/">Domain Lookup</a></h3><p>Combine public DNS and publicly logged TLS certificate intelligence for a domain.</p><div class="tool-endpoint">GET /v1/tools/domain/lookup · $0.005</div></article>
+                    <article class="tool-card"><span class="tool-category">NETWORK INTELLIGENCE</span><h3><a href="/tools/ip-geolocation/">IP Geolocation</a></h3><p>Resolve a public IPv4 or IPv6 address to structured location and network information.</p><div class="tool-endpoint">GET /v1/tools/ip/geolocation · $0.003</div></article>
+                    <article class="tool-card"><span class="tool-category">BLOCKCHAIN INTELLIGENCE</span><h3><a href="/tools/wallet-balance/">Wallet Balance</a></h3><p>Read the native ETH balance of an EVM wallet on Base Mainnet.</p><div class="tool-endpoint">GET /v1/tools/wallet/balance · $0.002</div></article>
+                </div>
+                <p>Open each tool page for its dedicated endpoint documentation, parameters, use cases and implementation guidance.</p>
+            </section>
+
+            <section id="authentication" class="docs-section">
+                <span class="eyebrow">ACCESS</span>
+                <h2>API keys and machine payments</h2>
+                <p>DataBG supports an API-key access path for authorized clients and x402 machine payments for paid resources. API-key requests use the <code>x-api-key</code> HTTP header. x402-enabled resources can return HTTP 402 Payment Required with machine-readable payment authorization requirements.</p>
+                <div class="code-window"><div class="code-header"><span>API key request</span></div><pre><code>GET https://api.databg.tech/v1/tools/dns?domain=example.com&amp;type=A
+x-api-key: YOUR_API_KEY
+Accept: application/json</code></pre></div>
             </section>
 
             <section id="discovery" class="docs-section">
-                <span class="eyebrow">DISCOVERY</span>
-                <h2>Machine-readable catalog</h2>
-                <p>
-                    Agents can discover the platform, datasets, tools, endpoints and payment configuration without
-                    relying on a human-oriented interface.
-                </p>
-                <div class="code-window"><div class="code-header"><span>Discovery</span></div><pre><code>GET https://api.databg.tech/.well-known/databg.json
-
+                <span class="eyebrow">MACHINE DISCOVERY</span>
+                <h2>Let agents discover DataBG automatically</h2>
+                <p>Machine-readable resources make it possible for software to discover the DataBG catalog without relying on the visual website. Use the discovery document for platform-level capabilities and the OpenAPI document for HTTP endpoint definitions.</p>
+                <div class="code-window"><div class="code-header"><span>Discovery endpoints</span></div><pre><code>GET https://api.databg.tech/.well-known/databg.json
 GET https://api.databg.tech/.well-known/x402
-
 GET https://api.databg.tech/openapi.json</code></pre></div>
             </section>
 
-            <section id="api" class="docs-section">
-                <span class="eyebrow">REST API</span>
-                <h2>Predictable HTTP endpoints</h2>
-                <p>
-                    DataBG resources use standard HTTP endpoints and return structured JSON. Current resources
-                    include datasets, web intelligence, DNS and TLS utilities, IP geolocation, domain lookup and blockchain intelligence.
-                </p>
-                <div class="code-window"><div class="code-header"><span>Tool examples</span></div><pre><code>GET https://api.databg.tech/v1/tools/ip/geolocation
-    ?ip=8.8.8.8
-
-GET https://api.databg.tech/v1/tools/domain/lookup
-    ?domain=google.com
-
-GET https://api.databg.tech/v1/tools/dns
-    ?domain=example.com
-    &type=A</code></pre></div>
-            </section>
-
             <section id="x402" class="docs-section">
-                <span class="eyebrow">MACHINE PAYMENTS</span>
-                <h2>x402 payment flow</h2>
-                <p>
-                    Paid resources can return HTTP 402 Payment Required with machine-readable payment
-                    requirements. A compatible client can settle the request in USDC on Base Mainnet and retry.
-                </p>
-                <div class="code-window"><div class="code-header"><span>x402</span></div><pre><code>Request
-  ↓
-402 Payment Required
-  ↓
-USDC payment on Base Mainnet
-  ↓
-Request settlement
-  ↓
-Structured JSON response</code></pre></div>
+                <span class="eyebrow">X402</span>
+                <h2>HTTP 402 machine payment flow</h2>
+                <p>x402 turns an API request into a machine-readable payment negotiation. A client requests a paid resource, receives payment requirements, settles the required amount in USDC on Base Mainnet, and retries the request with payment authorization.</p>
+                <div class="code-window"><div class="code-header"><span>Request lifecycle</span></div><pre><code>1. Agent requests API resource
+2. DataBG returns 402 Payment Required
+3. Client reads payment requirements
+4. Client settles USDC payment on Base Mainnet
+5. Client retries with payment authorization
+6. DataBG returns structured JSON</code></pre></div>
+                <p>This model is particularly suitable for autonomous agents because payment can happen at request time instead of requiring a traditional user account or subscription flow.</p>
             </section>
 
-            <section id="example" class="docs-section">
-                <span class="eyebrow">RESPONSE</span>
-                <h2>Structured JSON</h2>
-                <div class="code-window"><div class="code-header"><span>IP geolocation example</span></div><pre><code>{
-  "success": true,
-  "ip": "8.8.8.8",
-  "city": "Mountain View",
-  "region": "California",
-  "country": "US",
-  "country_code": "US",
-  "timezone": "America/Los_Angeles",
-  "organization": "Google LLC",
-  "asn": "AS15169",
-  "hostname": "dns.google"
-}</code></pre></div>
+            <section id="errors" class="docs-section">
+                <span class="eyebrow">ERROR HANDLING</span>
+                <h2>Design agents for predictable failures</h2>
+                <p>Production integrations should treat HTTP status codes as part of the API contract. Depending on the tool, clients may encounter invalid input, payment requirements, upstream failures or internal errors.</p>
+                <div class="tools-grid">
+                    <article class="tool-card"><span class="tool-category">400</span><h3>Bad request</h3><p>The URL, domain, IP address or other request input is invalid or missing.</p></article>
+                    <article class="tool-card"><span class="tool-category">402</span><h3>Payment required</h3><p>The resource requires x402 payment before the successful data response.</p></article>
+                    <article class="tool-card"><span class="tool-category">500</span><h3>Server error</h3><p>An unexpected error occurred while processing the request.</p></article>
+                    <article class="tool-card"><span class="tool-category">502</span><h3>Upstream failure</h3><p>An external resolver or requested web resource could not be fetched or processed.</p></article>
+                </div>
             </section>
 
-            <section id="status" class="docs-section">
-                <span class="eyebrow">LIVE STATUS</span>
-                <h2>Infrastructure is live</h2>
-                <p>
-                    DataBG currently exposes active datasets and machine-payable tools through the production API.
-                    The catalog will continue expanding with new data sources and agent utilities.
-                </p>
-                <a href="https://api.databg.tech/openapi.json" class="text-link" target="_blank" rel="noopener">Open live API specification →</a>
+            <section id="workflow" class="docs-section">
+                <span class="eyebrow">AGENT WORKFLOW</span>
+                <h2>Compose multiple tools into one workflow</h2>
+                <p>DataBG tools are designed to be composable. An agent researching a domain could start with Domain Lookup, use DNS Lookup for a specific record type, inspect the TLS certificate with SSL Certificate Check, extract a public page with Web Page Extraction, and use Web Page Metadata when it needs SEO or social signals.</p>
+                <div class="code-window"><div class="code-header"><span>Example reasoning pipeline</span></div><pre><code>Domain Lookup
+    ↓
+DNS / TLS details
+    ↓
+Web Page Metadata
+    ↓
+Web Page Extraction
+    ↓
+Structured evidence for the agent</code></pre></div>
+                <p>For network-aware workflows, IP Geolocation can add geographic and ASN context. For blockchain-aware workflows, Wallet Balance can provide native ETH balance information from Base Mainnet.</p>
+                <a href="https://api.databg.tech/openapi.json" class="button button-primary" target="_blank" rel="noopener">Open live API specification →</a>
             </section>
         </div>
     </div>
