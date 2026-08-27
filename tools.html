@@ -1,179 +1,24 @@
 ---
 layout: default
-title: Tools
-description: Machine-payable DataBG tools for AI agents, developers and automated systems.
+title: API Tools
+description: Machine-payable DataBG API tools for AI agents, developers and automated systems. Explore web extraction, metadata, DNS, SSL, wallet, IP geolocation and domain intelligence APIs.
 ---
 
-<section class="page-hero tools-page-hero">
-    <div class="container">
-        <span class="eyebrow">AGENT TOOLS</span>
-        <h1>Tools for the<br><span class="gradient-text">agentic web.</span></h1>
-        <p>
-            DataBG provides machine-payable utilities that AI agents and applications
-            can discover, call and pay for automatically using x402 on Base Mainnet.
-        </p>
+<section class="page-hero tools-page-hero"><div class="container"><span class="eyebrow">AGENT TOOLS</span><h1>Tools for the<br><span class="gradient-text">agentic web.</span></h1><p>DataBG provides machine-payable utilities that AI agents and applications can discover, call and pay for automatically using x402 on Base Mainnet.</p><div class="tools-hero-meta"><div><strong>7</strong><span>Active tools</span></div><div class="meta-divider"></div><div><strong>USDC</strong><span>Payment currency</span></div><div class="meta-divider"></div><div><strong>Base</strong><span>Mainnet network</span></div><div class="meta-divider"></div><div><strong>x402</strong><span>Machine payments</span></div></div></div></section>
 
-        <div class="tools-hero-meta">
-            <div>
-                <strong>7</strong>
-                <span>Active tools</span>
-            </div>
-            <div class="meta-divider"></div>
-            <div>
-                <strong>USDC</strong>
-                <span>Payment currency</span>
-            </div>
-            <div class="meta-divider"></div>
-            <div>
-                <strong>Base</strong>
-                <span>Mainnet network</span>
-            </div>
-            <div class="meta-divider"></div>
-            <div>
-                <strong>x402</strong>
-                <span>Machine payments</span>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="section tools-section"><div class="container"><div class="section-heading tools-section-heading"><div><span class="eyebrow">AVAILABLE NOW</span><h2>Machine-payable<br>utilities.</h2></div><p>Each tool exposes a structured API endpoint and supports automatic x402 payment. Agents can discover the available tools through DataBG machine-readable discovery documents.</p></div>
+<div class="tools-grid">
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">01</span><span class="tool-price">$0.005</span></div><span class="tool-category">WEB INTELLIGENCE</span><h3><a href="/tools/web-page-extraction/">Web Page Extraction</a></h3><p>Fetch a public web page and return structured metadata, visible text and links.</p><div class="tool-endpoint">GET /v1/web/extract</div><div class="tool-tags"><span>HTTP</span><span>JSON</span><span>x402</span></div></article>
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">02</span><span class="tool-price">$0.003</span></div><span class="tool-category">WEB INTELLIGENCE</span><h3><a href="/tools/web-page-metadata/">Web Page Metadata</a></h3><p>Extract SEO, Open Graph, Twitter and technical metadata from a public web page.</p><div class="tool-endpoint">GET /v1/web/metadata</div><div class="tool-tags"><span>SEO</span><span>Open Graph</span><span>x402</span></div></article>
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">03</span><span class="tool-price">$0.005</span></div><span class="tool-category">DOMAIN INTELLIGENCE</span><h3><a href="/tools/dns-lookup/">DNS Lookup</a></h3><p>Resolve public DNS records for a domain, including A, AAAA, MX, CNAME, NS, TXT and SOA records.</p><div class="tool-endpoint">GET /v1/tools/dns</div><div class="tool-tags"><span>DNS</span><span>DoH</span><span>x402</span></div></article>
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">04</span><span class="tool-price">$0.005</span></div><span class="tool-category">DOMAIN INTELLIGENCE</span><h3><a href="/tools/ssl-certificate-check/">SSL Certificate Check</a></h3><p>Inspect publicly logged TLS certificate information, validity, issuer, SANs and expiration.</p><div class="tool-endpoint">GET /v1/tools/ssl</div><div class="tool-tags"><span>TLS</span><span>Certificate</span><span>x402</span></div></article>
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">05</span><span class="tool-price">$0.002</span></div><span class="tool-category">BLOCKCHAIN INTELLIGENCE</span><h3><a href="/tools/wallet-balance/">Wallet Balance</a></h3><p>Check the native ETH balance of an EVM wallet on Base Mainnet and return structured balance data.</p><div class="tool-endpoint">GET /v1/tools/wallet/balance</div><div class="tool-tags"><span>EVM</span><span>Base</span><span>x402</span></div></article>
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">06</span><span class="tool-price">$0.003</span></div><span class="tool-category">NETWORK INTELLIGENCE</span><h3><a href="/tools/ip-geolocation/">IP Geolocation</a></h3><p>Resolve geolocation and network information for a public IP address, including location, timezone, organization and hostname.</p><div class="tool-endpoint">GET /v1/tools/ip/geolocation</div><div class="tool-tags"><span>IP</span><span>Geo</span><span>x402</span></div></article>
+<article class="tool-card"><div class="tool-card-top"><span class="tool-index">07</span><span class="tool-price">$0.005</span></div><span class="tool-category">DOMAIN INTELLIGENCE</span><h3><a href="/tools/domain-lookup/">Domain Lookup</a></h3><p>Resolve public DNS records and inspect the latest publicly logged TLS certificate information for a domain.</p><div class="tool-endpoint">GET /v1/tools/domain/lookup</div><div class="tool-tags"><span>DNS</span><span>TLS</span><span>x402</span></div></article>
+<article class="tool-card tool-card-marketplace"><div class="tool-card-top"><span class="tool-index">+</span><span class="tool-status">EXPANDING</span></div><span class="tool-category">DATA + INTELLIGENCE</span><h3>More agent tools</h3><p>New machine-payable utilities and structured data resources are being added as DataBG expands.</p><div class="tool-endpoint">Discovery → /.well-known/databg.json</div><div class="tool-tags"><span>Agents</span><span>USDC</span><span>Base</span></div></article>
+</div></div></section>
 
-<section class="section tools-section">
-    <div class="container">
-        <div class="section-heading tools-section-heading">
-            <div>
-                <span class="eyebrow">AVAILABLE NOW</span>
-                <h2>Machine-payable<br>utilities.</h2>
-            </div>
-            <p>
-                Each tool exposes a structured API endpoint and supports automatic
-                x402 payment. Agents can discover the available tools through the
-                DataBG machine-readable discovery documents.
-            </p>
-        </div>
-
-        <div class="tools-grid">
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">01</span>
-                    <span class="tool-price">$0.005</span>
-                </div>
-                <span class="tool-category">WEB INTELLIGENCE</span>
-                <h3>Web Page Extraction</h3>
-                <p>Fetch a public web page and return structured metadata, visible text and links.</p>
-                <div class="tool-endpoint">GET /v1/web/extract</div>
-                <div class="tool-tags"><span>HTTP</span><span>JSON</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">02</span>
-                    <span class="tool-price">$0.003</span>
-                </div>
-                <span class="tool-category">WEB INTELLIGENCE</span>
-                <h3>Web Page Metadata</h3>
-                <p>Extract SEO, Open Graph, Twitter and technical metadata from a public web page.</p>
-                <div class="tool-endpoint">GET /v1/web/metadata</div>
-                <div class="tool-tags"><span>SEO</span><span>Open Graph</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">03</span>
-                    <span class="tool-price">$0.005</span>
-                </div>
-                <span class="tool-category">DOMAIN INTELLIGENCE</span>
-                <h3>DNS Lookup</h3>
-                <p>Resolve public DNS records for a domain, including A, AAAA, MX, CNAME, NS, TXT and SOA records.</p>
-                <div class="tool-endpoint">GET /v1/tools/dns</div>
-                <div class="tool-tags"><span>DNS</span><span>DoH</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">04</span>
-                    <span class="tool-price">$0.005</span>
-                </div>
-                <span class="tool-category">DOMAIN INTELLIGENCE</span>
-                <h3>SSL Certificate Check</h3>
-                <p>Inspect publicly logged TLS certificate information, validity, issuer, SANs and expiration.</p>
-                <div class="tool-endpoint">GET /v1/tools/ssl</div>
-                <div class="tool-tags"><span>TLS</span><span>Certificate</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">05</span>
-                    <span class="tool-price">$0.002</span>
-                </div>
-                <span class="tool-category">BLOCKCHAIN INTELLIGENCE</span>
-                <h3>Wallet Balance</h3>
-                <p>Check the native ETH balance of an EVM wallet on Base Mainnet and return structured balance data.</p>
-                <div class="tool-endpoint">GET /v1/tools/wallet/balance</div>
-                <div class="tool-tags"><span>EVM</span><span>Base</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">06</span>
-                    <span class="tool-price">$0.003</span>
-                </div>
-                <span class="tool-category">NETWORK INTELLIGENCE</span>
-                <h3>IP Geolocation</h3>
-                <p>Resolve geolocation and network information for a public IP address, including location, timezone, organization and hostname.</p>
-                <div class="tool-endpoint">GET /v1/tools/ip/geolocation</div>
-                <div class="tool-tags"><span>IP</span><span>Geo</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-card-top">
-                    <span class="tool-index">07</span>
-                    <span class="tool-price">$0.005</span>
-                </div>
-                <span class="tool-category">DOMAIN INTELLIGENCE</span>
-                <h3>Domain Lookup</h3>
-                <p>Resolve public DNS records and inspect the latest publicly logged TLS certificate information for a domain.</p>
-                <div class="tool-endpoint">GET /v1/tools/domain/lookup</div>
-                <div class="tool-tags"><span>DNS</span><span>TLS</span><span>x402</span></div>
-            </article>
-
-            <article class="tool-card tool-card-marketplace">
-                <div class="tool-card-top">
-                    <span class="tool-index">+</span>
-                    <span class="tool-status">EXPANDING</span>
-                </div>
-                <span class="tool-category">DATA + INTELLIGENCE</span>
-                <h3>More agent tools</h3>
-                <p>New machine-payable utilities and structured data resources are being added as DataBG expands.</p>
-                <div class="tool-endpoint">Discovery → /.well-known/databg.json</div>
-                <div class="tool-tags"><span>Agents</span><span>USDC</span><span>Base</span></div>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<section class="section tools-protocol-section">
-    <div class="container agent-grid">
-        <div class="agent-copy">
-            <span class="eyebrow">MACHINE PAYMENTS</span>
-            <h2>Discover.<br>Call. Pay.</h2>
-            <p>
-                DataBG tools are designed for autonomous software. A client can discover
-                available resources, receive a 402 payment requirement, settle the request
-                in USDC on Base Mainnet and receive structured JSON data.
-            </p>
-            <a href="https://api.databg.tech/.well-known/databg.json" class="text-link" target="_blank" rel="noopener">
-                View machine-readable discovery →
-            </a>
-        </div>
-
-        <div class="code-window">
-            <div class="code-header">
-                <div class="window-dots"><span></span><span></span><span></span></div>
-                <span>x402 flow</span>
-            </div>
-            <pre><code><span class="code-muted">GET</span> /v1/tools/ip/geolocation?ip=8.8.8.8
+<section class="section tools-protocol-section"><div class="container agent-grid"><div class="agent-copy"><span class="eyebrow">MACHINE PAYMENTS</span><h2>Discover.<br>Call. Pay.</h2><p>DataBG tools are designed for autonomous software. A client can discover available resources, receive a 402 payment requirement, settle the request in USDC on Base Mainnet and receive structured JSON data.</p><a href="https://api.databg.tech/.well-known/databg.json" class="text-link" target="_blank" rel="noopener">View machine-readable discovery →</a></div><div class="code-window"><div class="code-header"><div class="window-dots"><span></span><span></span><span></span></div><span>x402 flow</span></div><pre><code><span class="code-muted">GET</span> /v1/tools/ip/geolocation?ip=8.8.8.8
 
 <span class="code-number">402</span> Payment Required
 
@@ -182,21 +27,6 @@ description: Machine-payable DataBG tools for AI agents, developers and automate
 <span class="code-key">currency</span>: <span class="code-value">USDC</span>
 <span class="code-key">price</span>: <span class="code-value">$0.003</span>
 
-<span class="code-success">→ payment → structured JSON</span></code></pre>
-        </div>
-    </div>
-</section>
+<span class="code-success">→ payment → structured JSON</span></code></pre></div></div></section>
 
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-box">
-            <div class="cta-glow"></div>
-            <span class="eyebrow">BUILD WITH DATABG</span>
-            <h2>Give your agent<br>access to data.</h2>
-            <p>Explore the API and machine-readable catalog to start building agent workflows.</p>
-            <a href="https://api.databg.tech/openapi.json" class="button button-primary" target="_blank" rel="noopener">
-                View API documentation <span>→</span>
-            </a>
-        </div>
-    </div>
-</section>
+<section class="cta-section"><div class="container"><div class="cta-box"><div class="cta-glow"></div><span class="eyebrow">BUILD WITH DATABG</span><h2>Give your agent<br>access to data.</h2><p>Explore the API and machine-readable catalog to start building agent workflows.</p><a href="https://api.databg.tech/openapi.json" class="button button-primary" target="_blank" rel="noopener">View API documentation <span>→</span></a></div></div></section>
