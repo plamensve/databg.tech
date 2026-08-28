@@ -36,4 +36,26 @@ main h1,main h2,main h3{letter-spacing:-.025em}
  .button:after{display:none}.section-label,.eyebrow{animation:none}.reveal-float{transition:none}
  .home-parallax-layer,.hero-glow,.hero-decoration,.hero-visual{transform:none!important}
 }
-@media(max-width:800px){.site-header .main-nav{gap:2px!important}.site-header .main-nav .nav-link{padding:9px 7px!important}.site-header .main-nav .nav-link span{display:none}.site-header .logo-image{width:132px;height:34px}}
+
+@media(max-width:900px){
+ .site-header .main-nav{gap:2px!important}
+ .site-header .main-nav .nav-link{padding:9px 7px!important}
+ .site-header .main-nav .nav-link span{display:none}
+ .site-header .logo-image{width:132px;height:34px}
+
+ /* Mobile performance: keep the visual identity but remove continuous filter/GPU work. */
+ .section-label,.eyebrow{animation:none;filter:none}
+ .button,.tool-card,.dataset-card,.feature-card,.home-parallax-layer,.hero-glow,.hero-decoration,.hero-visual{will-change:auto}
+ .reveal-item,.reveal-item.reveal-left,.reveal-item.reveal-right{filter:none;transform:translate3d(0,10px,0);transition:opacity .28s ease,transform .28s ease}
+ .reveal-item.is-visible,.reveal-item.reveal-left.is-visible,.reveal-item.reveal-right.is-visible{transform:none}
+ .button:after{display:none}
+
+ /* The full animated fixed scene is expensive during iOS/Android scrolling. */
+ .ai-background{position:absolute;min-height:100vh;opacity:.72;contain:paint}
+ .ai-grid,.ai-scan,.ai-orb-three,.ai-network-two{display:none}
+ .ai-background:after,.ai-orb,.ai-network-one,.network-line,.constellation-link,.constellation-star,.orbit-node,.ai-orbit{animation:none!important}
+ .ai-orb{filter:none!important;opacity:.06}
+ .ai-network-one{opacity:.34;will-change:auto}
+ .constellation-star,.cyan-star,.orbit-node,.ai-orbit circle{filter:none!important}
+ .ai-orb,.ai-network,.ai-scan,.ai-grid,.ai-background:after{will-change:auto!important}
+}
