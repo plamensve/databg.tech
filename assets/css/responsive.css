@@ -10,16 +10,26 @@ body {
 img, svg, video, canvas, iframe { max-width: 100%; }
 pre, code, .code-window, .tool-endpoint { max-width: 100%; }
 pre { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-main, section, .container, .tool-page-content { min-width: 0; }
+main, section, .container, .tool-page-content, .docs-content, .docs-section, .tools-grid, .tool-card { min-width: 0; }
 .mobile-nav-toggle, .mobile-api-link { display: none; }
 
 @media (max-width: 900px) {
+    /* Avoid expensive fixed/filter repaints while scrolling on phones and tablets. */
+    body::before {
+        display: none;
+        animation: none;
+    }
+
     .site-header {
         min-height: 72px;
         height: auto;
         width: 100%;
         max-width: 100vw;
         overflow-x: clip;
+        background: rgba(5,8,18,.96);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: 0 6px 20px rgba(0,0,0,.18);
     }
 
     .nav-container {
@@ -111,7 +121,6 @@ main, section, .container, .tool-page-content { min-width: 0; }
         text-align: left;
     }
 
-    /* Force labels to remain visible in the expanded mobile navigation. */
     .main-nav.is-open .nav-link > span,
     .main-nav.is-open .mobile-api-link > span,
     .main-nav .nav-link > span {
@@ -124,10 +133,7 @@ main, section, .container, .tool-page-content { min-width: 0; }
         white-space: nowrap;
     }
 
-    .main-nav .nav-icon {
-        flex: 0 0 18px;
-    }
-
+    .main-nav .nav-icon { flex: 0 0 18px; }
     .mobile-api-link { display: flex !important; margin-top: 4px; color: #bfeeff !important; }
 
     .hero { min-height: auto; padding-top: 72px; }
@@ -140,18 +146,25 @@ main, section, .container, .tool-page-content { min-width: 0; }
     .dataset-grid,
     .feature-grid,
     .tools-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 40px;
     }
 
     .hero-meta, .tools-hero-meta, .dataset-stats { flex-wrap: wrap; }
     .meta-divider { display: none; }
     .cta-box { padding: 65px 25px; }
-    .docs-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
+    .docs-sidebar { position: static; }
 
     .tool-page-container { display: block; }
     .tool-sidebar { position: relative; top: auto; margin-left: 0; padding: 20px 0 0; }
     .tool-page-content { width: 100%; max-width: 100%; }
+
+    /* Paint only sections near the viewport on long pages. */
+    main > .section,
+    .tool-documentation-section {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 800px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -162,6 +175,8 @@ main, section, .container, .tool-page-content { min-width: 0; }
         max-width: 100%;
         overflow-x: clip;
     }
+
+    html { scroll-padding-top: 84px; }
 
     .container {
         width: calc(100% - 32px);
@@ -179,7 +194,6 @@ main, section, .container, .tool-page-content { min-width: 0; }
     .logo-image { width: 126px; height: auto; }
     .nav-cta { display: none; }
 
-    /* Center primary page information on phones. */
     .hero-container,
     .page-hero .container,
     .section-heading,
@@ -234,30 +248,34 @@ main, section, .container, .tool-page-content { min-width: 0; }
     .tool-sidebar-inner {
         width: 100%;
         max-width: 100%;
+        min-width: 0;
     }
 
-    .dataset-card, .tool-card, .feature-card, .docs-section { padding-left: 20px; padding-right: 20px; }
+    .dataset-card, .tool-card, .feature-card { padding-left: 20px; padding-right: 20px; }
     .dataset-stats { justify-content: center; gap: 20px; }
     .dataset-link { position: static; display: inline-block; margin-top: 30px; }
 
     .tool-sidebar-inner { border-radius: 14px; }
-    .tool-sidebar-nav { grid-template-columns: 1fr; }
+    .tool-sidebar-nav { grid-template-columns: minmax(0, 1fr); }
     .tool-sidebar-link { min-height: 56px; }
+    .tool-sidebar-copy { min-width: 0; }
+    .tool-sidebar-copy strong,
+    .tool-sidebar-copy small { overflow-wrap: anywhere; }
     .tool-sidebar-copy small { display: block; }
 
     .footer-content, .footer-bottom { flex-direction: column; gap: 25px; text-align: center; align-items: center; }
     .footer-links { flex-direction: column; gap: 12px; align-items: center; }
 
     .page-hero { padding: 82px 0 58px; }
-    .page-hero h1 { font-size: clamp(40px, 12vw, 48px); line-height: 1.03; letter-spacing: -2px; }
+    .page-hero h1 { font-size: clamp(40px, 12vw, 48px); line-height: 1.03; letter-spacing: -2px; overflow-wrap: anywhere; }
     .page-hero p { font-size: 16px; }
 
     .tools-hero-meta > div, .hero-meta > div { min-width: 0; }
-    .code-window pre { font-size: 12px; line-height: 1.6; text-align: left; }
+    .code-window { overflow: hidden; }
+    .code-window pre { width: 100%; max-width: 100%; font-size: 12px; line-height: 1.6; text-align: left; overflow-x: auto; }
     .tool-endpoint { overflow-wrap: anywhere; word-break: break-word; text-align: left; }
     .button, .nav-link, .tool-sidebar-link { min-height: 44px; }
 
-    /* Prevent hover/tilt transforms from visually dragging cards outside the viewport on touch screens. */
     .reveal-float:hover,
     .feature-card:hover,
     .main-nav a:hover {
@@ -268,6 +286,6 @@ main, section, .container, .tool-page-content { min-width: 0; }
 @media (max-width: 380px) {
     .container,
     .nav-container { width: calc(100% - 24px); }
-    .dataset-card, .tool-card, .feature-card, .docs-section { padding-left: 16px; padding-right: 16px; }
+    .dataset-card, .tool-card, .feature-card { padding-left: 16px; padding-right: 16px; }
     .page-hero h1, .hero h1 { overflow-wrap: anywhere; }
 }
