@@ -1,7 +1,16 @@
 .docs-layout {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 220px minmax(0, 1fr);
     gap: 70px;
+}
+
+.docs-layout > *,
+.docs-content,
+.docs-section,
+.docs-section > *,
+.tools-grid,
+.tool-card {
+    min-width: 0;
 }
 
 .docs-sidebar {
@@ -23,22 +32,51 @@
 }
 
 .docs-content {
+    width: 100%;
     max-width: 800px;
 }
 
 .docs-section {
+    width: 100%;
     padding-bottom: 90px;
 }
 
 .docs-section h2 {
     font-size: 38px;
     letter-spacing: -1.5px;
+    overflow-wrap: anywhere;
 }
 
 .docs-section > p {
     margin-top: 18px;
     margin-bottom: 28px;
     color: var(--text-soft);
+}
+
+.docs-section p,
+.docs-section a,
+.docs-section li {
+    overflow-wrap: anywhere;
+}
+
+.docs-section .code-window {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.docs-section .code-window pre {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.docs-section .code-window code {
+    max-width: none;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 /* Expanded tool documentation lives inside the tool-page shell. */
@@ -84,18 +122,80 @@
 
 @media (max-width: 900px) {
     .docs-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
     }
 
     .docs-sidebar {
         position: static;
+        width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .docs-sidebar a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 8px 12px;
+        border: 1px solid rgba(112,137,194,.18);
+        border-radius: 999px;
+        background: rgba(12,18,34,.48);
     }
 
     .docs-content,
     .tool-documentation-section .docs-section {
+        width: 100%;
         max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .docs-section {
+        padding: 0 0 64px;
+    }
+
+    .docs-section h2 {
+        font-size: clamp(30px, 9vw, 36px);
+        line-height: 1.08;
+        letter-spacing: -1.2px;
+    }
+
+    .docs-section > p {
+        margin-top: 14px;
+        margin-bottom: 22px;
+    }
+
+    .docs-sidebar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 2px 0 8px;
+        margin-bottom: 4px;
+        scrollbar-width: none;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .docs-sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .docs-sidebar a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .docs-section .tools-grid {
+        gap: 16px;
+    }
+
+    .docs-section .tool-card {
+        padding: 20px;
+    }
+
+    .docs-section .code-window pre {
+        font-size: 12px;
+        line-height: 1.6;
     }
 }
