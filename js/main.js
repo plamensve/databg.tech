@@ -4,6 +4,43 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(pointer: fine)").matches;
 
+  // Accessible mobile navigation.
+  const navToggle = document.querySelector(".mobile-nav-toggle");
+  const mainNav = document.querySelector(".main-nav");
+  if (navToggle && mainNav) {
+    const closeNav = () => {
+      mainNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
+    };
+
+    navToggle.addEventListener("click", () => {
+      const willOpen = !mainNav.classList.contains("is-open");
+      mainNav.classList.toggle("is-open", willOpen);
+      navToggle.setAttribute("aria-expanded", String(willOpen));
+      navToggle.setAttribute("aria-label", willOpen ? "Close navigation" : "Open navigation");
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeNav));
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeNav();
+        navToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", event => {
+      if (!mainNav.classList.contains("is-open")) return;
+      if (mainNav.contains(event.target) || navToggle.contains(event.target)) return;
+      closeNav();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) closeNav();
+    }, { passive: true });
+  }
+
   const selectors = [
     "main > section", "main > .container > section", ".hero-content > *",
     ".section-header", ".card", ".dataset-card", ".tool-card", ".feature-card",
@@ -44,6 +81,7 @@
       card.classList.add("reveal-float");
       card.addEventListener("pointermove", event => {
         const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
         const x = (event.clientX - rect.left) / rect.width - .5;
         const y = (event.clientY - rect.top) / rect.height - .5;
         card.style.transform = `perspective(900px) rotateX(${(-y * 1.8).toFixed(2)}deg) rotateY(${(x * 1.8).toFixed(2)}deg) translateY(-3px)`;
